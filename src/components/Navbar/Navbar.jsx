@@ -5,6 +5,7 @@ import { Menu as MenuIcon } from "@mui/icons-material";
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from "react";
 import Logo from '../../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 
 const pages = ['Home', 'Browse', 'Sell', 'Discord'];
@@ -23,7 +24,7 @@ export const Navbar = () => {
 
     return (
         <div>
-            <AppBar position='static'>
+            <AppBar position='static' sx={{ background: '#f1f1f1' }}>
                 <Toolbar disableGutters sx={{ p: '25px', }}>
                     <Box
                         noWrap
@@ -68,15 +69,27 @@ export const Navbar = () => {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
-                            ))}
+                            <MenuItem onClick={handleCloseNavMenu}>
+                                <Link className='link' to='/'>Home</Link>
+                            </MenuItem>
+                            <MenuItem onClick={handleCloseNavMenu}>
+                                <Link className='link' to='/project'>Browse</Link>
+                            </MenuItem>
+                            <MenuItem onClick={handleCloseNavMenu}>
+                                <Link className='link' to='/leaderboard'>Sell</Link>
+                            </MenuItem>
+                            <MenuItem onClick={handleCloseNavMenu}>
+                                <Link className='link' to='/'>Discord</Link>
+                            </MenuItem>
                         </Menu>
                     </Box>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
+                    <Box sx={{
+                        flexGrow: 1,
+                        display: { xs: 'none', md: 'flex' },
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}>
                         <Input
                             className='search-input'
                             endAdornment={
@@ -101,27 +114,44 @@ export const Navbar = () => {
                                 }
                             }}
                         />
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ mx: '14px', color: 'white', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
+                        <Button
+                            onClick={handleCloseNavMenu}
+                            sx={{ mx: '14px', color: 'white', display: 'block' }}
+                        >
+                            <Link className='link' to='/'>Home</Link>
+                        </Button>
+                        <Button
+                            onClick={handleCloseNavMenu}
+                            sx={{ mx: '14px', color: 'white', display: 'block' }}
+                        >
+                            <Link className='link' to='/project'>Browse</Link>
+                        </Button>
+                        <Button
+                            onClick={handleCloseNavMenu}
+                            sx={{ mx: '14px', color: 'white', display: 'block' }}
+                        >
+                            <Link className='link' to='/leaderboard'>Sell</Link>
+                        </Button>
+                        <Button
+                            onClick={handleCloseNavMenu}
+                            sx={{ mx: '14px', color: 'white', display: 'block' }}
+                        >
+                            <Link className='link' to='/'>Discord</Link>
+                        </Button>
+
                     </Box>
 
                     <Box>
                         <Button
                             variant="outlined"
                             sx={{
-                                color: 'white',
-                                border: '1px solid white',
                                 borderRadius: '15px',
+                                color: '#737373',
+                                border: '1px solid #737373',
                                 px: '15px',
                                 py: '5px',
-                                '&:hover': { border: '1px solid white' }
+                                '&:hover': { border: '1px solid #737373' },
+                                mb: { xs: '50px', lg: '0' }
                             }}
                         >
                             Select Wallet

@@ -5,3 +5,8 @@
     border: '1px solid white';
     padding: '0px 10px';
 }
+
+.link{
+    color: #737373;
+    text-decoration: none;
+}

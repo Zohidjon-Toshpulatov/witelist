@@ -10,6 +10,7 @@ export const TableRow = () => {
                     display: 'flex',
                     justifyContent: "space-between",
                     alignItems: 'center',
+                    flexDirection: { xs: 'column', lg: 'row' },
                     py: '10px',
                     px: '25px',
                     mt: '20px'
@@ -20,12 +21,14 @@ export const TableRow = () => {
                 </Box>
                 <Box sx={{ display: 'flex' }}>
                     <Typography sx={{
+                        fontSize: '20px',
                         '&>span': {
                             color: 'red',
                         },
                         mr: '20px'
                     }}><span>1232</span> UPVOTES</Typography>
                     <Typography sx={{
+                        fontSize: '20px',
                         '&>span': {
                             color: 'green',
                         },

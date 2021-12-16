@@ -8,7 +8,7 @@ export const TopHeader = () => {
             <Box
                 component="div"
                 sx={{
-                    backgoundColor: '#F2ECCB',
+                    backgroundColor: 'white',
                     display: 'flex',
                     justifyContent: 'space-between',
                 }}

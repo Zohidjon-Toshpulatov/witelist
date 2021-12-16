@@ -1,3 +1,4 @@
+import './Home.css';
 import { Box, Button, Container, Typography } from "@mui/material";
 import miami from '../../assets/miami.jpg';
 import singUp from '../../assets/sign-up.png';
@@ -12,7 +13,7 @@ export const Home = () => {
             <Box
                 sx={{
                     background: '#ececec',
-                    p: '324px 0 20px 0'
+                    p: { xs: '100px 0 100px 0', lg: '324px 0 20px 0' }
                 }}>
                 <Typography variant='h2'>Header 1</Typography>
             </Box>
@@ -20,12 +21,13 @@ export const Home = () => {
                 sx={{
                     textAlign: 'center',
                     py: '39px',
+                    background: '#f1f1f1'
                 }}
             >
                 <Typography
                     sx={{
                         fontSize: { xs: '28px', lg: '48px' },
-                        fontWeight: '700',
+                        fontWeight: '900',
                         color: '#737373'
                     }}
                 >
@@ -39,15 +41,45 @@ export const Home = () => {
                         VERIFIED BY WL
                     </Typography>
                 </Box>
+                <Container sx={{ mb: '90px' }}>
+                    <Typography
+                        sx={{
+                            fontSize: { xs: '28px', lg: '48px' },
+                            fontWeight: '700',
+                            color: '#737373',
+                            textAlign: 'left',
 
+                        }}
+                    >
+                        Upcoming Launches
+                    </Typography>
+                    <ThreeItemSlider />
+
+                </Container>
             </Box>
-            <ThreeItemSlider />
-            <Box>
 
-                <Container sx={{ display: 'flex' }}>
+            <Box sx={{ background: '#ececec', py: '20px' }}>
+                <Container sx={{ mb: '90px' }}>
+                    <Typography
+                        sx={{
+                            fontSize: { xs: '28px', lg: '48px' },
+                            fontWeight: '700',
+                            color: '#737373',
+                            textAlign: 'center',
+
+                        }}
+                    >
+                        New Collections
+                    </Typography>
+                    <ThreeItemSlider />
+
+                </Container>
+            </Box>
+            <Box sx={{ background: '#f1f1f1' }}>
+                <Container sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' } }}>
                     <Box
                         sx={{
-                            width: '50%',
+                            width: { lg: '50%' },
                         }}
                     >
                         <Typography
@@ -56,14 +88,17 @@ export const Home = () => {
                             sx={{
                                 fontSize: '36px',
                                 color: '#737373',
-                                fontWeight: '900'
+                                fontWeight: '900',
+                                mb: '30px'
                             }}
                         >
                             Ligma
                         </Typography>
                         <Typography
                             sx={{
-                                textAlign: 'left'
+                                textAlign: 'left',
+                                mb: '32px',
+                                px: { lg: '50px' }
                             }}
                         >
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -78,29 +113,39 @@ export const Home = () => {
                             variant="outlined"
                             sx={{
                                 borderRadius: '15px',
+                                color: '#737373',
+                                border: '1px solid #737373',
                                 px: '15px',
                                 py: '5px',
-                                '&:hover': { border: '1px solid white' }
+                                '&:hover': { border: '1px solid #737373' },
+                                mb: { xs: '50px', lg: '0' }
                             }}
                         >
                             Select Wallet
                         </Button>
                     </Box>
-                    <Box sx={{ width: '50%' }}>
-                        <img src={miami} alt="placeholder" />
+                    <Box sx={{ width: { xs: '100%', lg: '50%' }, mb: { xs: '50px', lg: '0' } }}>
+                        <img className='image' src={miami} alt="placeholder" />
                     </Box>
 
 
                 </Container>
+            </Box>
+
+
+            <Box sx={{ background: '#ececec' }}>
                 <Container sx={{
-                    display: 'flex', justifyContent: 'space-around',
+                    display: 'flex',
+                    justifyContent: 'space-around',
+                    flexDirection: { xs: 'column', lg: 'row' },
+                    py: { xs: '40px', lg: '80px' }
                 }}>
 
-                    <Box sx={{ display: 'block', }}>
+                    <Box sx={{ display: 'block', mb: { xs: '30px', lg: '0' } }}>
                         <Box sx={{
                             py: '29px',
                             px: '35px',
-                            background: '#ececec',
+                            background: '#fff',
                             borderRadius: '38px',
                         }}>
 
@@ -108,11 +153,11 @@ export const Home = () => {
                         </Box>
                         <Typography sx={{ fontSize: '36px', fontWeight: '900' }}>Ligma</Typography>
                     </Box>
-                    <Box sx={{ display: 'block', }}>
+                    <Box sx={{ display: 'block', mb: { xs: '30px', lg: '0' } }}>
                         <Box sx={{
                             py: '29px',
                             px: '35px',
-                            background: '#ececec',
+                            background: '#fff',
                             borderRadius: '38px',
                         }}>
 
@@ -121,11 +166,11 @@ export const Home = () => {
                         <Typography sx={{ fontSize: '36px', fontWeight: '900' }}>Ligma</Typography>
 
                     </Box>
-                    <Box sx={{ display: 'block', }}>
+                    <Box sx={{ display: 'block', mb: { xs: '30px', lg: '0' } }}>
                         <Box sx={{
                             py: '29px',
                             px: '35px',
-                            background: '#ececec',
+                            background: '#fff',
                             borderRadius: '38px',
                         }}>
                             <img src={Analytics} alt="Analytics" />
@@ -133,18 +178,16 @@ export const Home = () => {
                         <Typography sx={{ fontSize: '36px', fontWeight: '900' }}>Ligma</Typography>
                     </Box>
                 </Container>
-                <Container
-                    sx={{ display: 'flex' }}>
-                    <Box
-                        sx={{
-                            width: '50%'
-                        }}
-                    >
-                        <img src={miami} alt="placeholder" />
+            </Box>
+            <Box sx={{ background: '#f1f1f1' }}>
+                <Container sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' } }}>
+                    <Box sx={{ width: { xs: '100%', lg: '50%' }, mb: { xs: '50px', lg: '0' } }}>
+                        <img className='image' src={miami} alt="placeholder" />
                     </Box>
                     <Box
                         sx={{
-                            width: '50%',
+                            width: { lg: '50%' },
+                            px: { lg: '50px' }
                         }}
                     >
                         <Typography
@@ -153,14 +196,16 @@ export const Home = () => {
                             sx={{
                                 fontSize: '36px',
                                 color: '#737373',
-                                fontWeight: '900'
+                                fontWeight: '900',
+                                mb: '30px'
                             }}
                         >
                             Ligma
                         </Typography>
                         <Typography
                             sx={{
-                                textAlign: 'left'
+                                textAlign: 'left',
+                                mb: '32px'
                             }}
                         >
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -175,9 +220,12 @@ export const Home = () => {
                             variant="outlined"
                             sx={{
                                 borderRadius: '15px',
+                                color: '#737373',
+                                border: '1px solid #737373',
                                 px: '15px',
                                 py: '5px',
-                                '&:hover': { border: '1px solid white' }
+                                '&:hover': { border: '1px solid #737373' },
+                                mb: { xs: '50px', lg: '0' }
                             }}
                         >
                             Select Wallet
@@ -185,9 +233,10 @@ export const Home = () => {
                     </Box>
 
 
-                </Container>
 
+                </Container>
             </Box>
+
         </div>
     )
 }
