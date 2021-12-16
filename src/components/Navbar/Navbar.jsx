@@ -1,5 +1,5 @@
 import './Navbar.css';
-import { AppBar, Button, IconButton, Input, InputAdornment, Menu, MenuItem, Toolbar, Typography } from "@mui/material"
+import { AppBar, Button, IconButton, Input, InputAdornment, Menu, MenuItem, Toolbar } from "@mui/material"
 import { Box } from "@mui/system"
 import { Menu as MenuIcon } from "@mui/icons-material";
 import SearchIcon from '@mui/icons-material/Search';
@@ -8,7 +8,6 @@ import Logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
 
 
-const pages = ['Home', 'Browse', 'Sell', 'Discord'];
 
 export const Navbar = () => {
 
