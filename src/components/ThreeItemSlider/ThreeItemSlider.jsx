@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material"
+import { Box } from "@mui/material"
 import Slider from "react-slick";
 import { SampleNextArrow, SamplePrevArrow } from "../DetailedSlider/DetailedSlider";
 import { SimpleCard } from "../SimpleCard/SimpleCard";
